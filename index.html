@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>FREE MUSIC!!!</title>
 
     <style>
@@ -29,3 +30,88 @@
         }
 
         p {
+            font-size: 22px;
+        }
+
+        button {
+            background: yellow;
+            color: red;
+            border: 5px outset white;
+            padding: 15px 30px;
+            font-size: 24px;
+            font-family: "Comic Sans MS", Arial, sans-serif;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:active {
+            border-style: inset;
+        }
+
+        #video {
+            display: none;
+            margin-top: 25px;
+        }
+
+        iframe {
+            width: 100%;
+            max-width: 560px;
+            height: 315px;
+            border: 6px ridge white;
+        }
+
+        .blink {
+            animation: blink 0.7s infinite;
+        }
+
+        @keyframes blink {
+            50% {
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box">
+
+        <h1 class="blink">🔥 FREE MUSIC!!! 🔥</h1>
+
+        <p>🎁 YOU WON!!! 🎁</p>
+
+        <p>Нажми кнопку, чтобы получить свою награду!</p>
+
+        <button onclick="showRickroll()">
+            CLICK HERE!!!
+        </button>
+
+        <div id="video">
+            <p>😂 YOU GOT RICKROLLED 😂</p>
+
+            <iframe
+                id="rickVideo"
+                src=""
+                title="Music video"
+                allow="autoplay; encrypted-media"
+                allowfullscreen>
+            </iframe>
+
+            <p>💀 Спасибо за клик 💀</p>
+        </div>
+
+    </div>
+
+    <script>
+        function showRickroll() {
+            document.getElementById("video").style.display = "block";
+
+            document.getElementById("rickVideo").src =
+                "https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1";
+
+            document.querySelector("button").style.display = "none";
+        }
+    </script>
+
+</body>
+</html>
